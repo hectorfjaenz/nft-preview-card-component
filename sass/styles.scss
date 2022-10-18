@@ -1,0 +1,150 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--main-bg);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  padding: 1.2rem;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  gap: 1rem;
+  position: relative;
+
+  .card-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    &:hover::before {
+      content: url(../images/icon-view.svg);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(0, 255, 255, 0.5);
+      border-radius: 12px;
+      width: 100%;
+      height: 98%;
+    }
+  }
+
+  .card-img img {
+    border-radius: 12px;
+  }
+
+  .card-body {
+    .card-title {
+      color: var(--white);
+      margin-bottom: 1rem;
+      transition: all 0.5s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--cyan);
+      }
+    }
+
+    p {
+      color: var(--soft-blue);
+      font-weight: 300;
+    }
+  }
+
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    position: relative;
+
+    .eth {
+      color: var(--cyan);
+      font-weight: bold;
+
+      &::before {
+        content: url(../images/icon-ethereum.svg);
+        top: 0;
+        left: 0;
+        margin-right: 7px;
+      }
+    }
+
+    .days {
+      color: var(--soft-blue);
+
+      &::before {
+        content: url(../images/icon-clock.svg);
+        top: 0;
+        left: 0;
+        margin-right: 7px;
+      }
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+    color: var(--soft-blue);
+
+    .card-footer-img {
+      max-width: 10%;
+      border: 1px solid var(--white);
+      border-radius: 50%;
+    }
+
+    a {
+      color: var(--white);
+      cursor: pointer;
+      transition: all 0.5s ease;
+
+      &:hover {
+        color: var(--cyan);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    padding: 1.5rem;
+  }
+}

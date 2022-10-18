@@ -1,0 +1,133 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--main-bg);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  padding: 1.2rem;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  gap: 1rem;
+  position: relative;
+}
+.card .card-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.card .card-img:hover::before {
+  content: url(../images/icon-view.svg);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 255, 255, 0.5);
+  border-radius: 12px;
+  width: 100%;
+  height: 98%;
+}
+.card .card-img img {
+  border-radius: 12px;
+}
+.card .card-body .card-title {
+  color: var(--white);
+  margin-bottom: 1rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.card .card-body .card-title:hover {
+  color: var(--cyan);
+}
+.card .card-body p {
+  color: var(--soft-blue);
+  font-weight: 300;
+}
+.card .card-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  position: relative;
+}
+.card .card-info .eth {
+  color: var(--cyan);
+  font-weight: bold;
+}
+.card .card-info .eth::before {
+  content: url(../images/icon-ethereum.svg);
+  top: 0;
+  left: 0;
+  margin-right: 7px;
+}
+.card .card-info .days {
+  color: var(--soft-blue);
+}
+.card .card-info .days::before {
+  content: url(../images/icon-clock.svg);
+  top: 0;
+  left: 0;
+  margin-right: 7px;
+}
+.card .card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  color: var(--soft-blue);
+}
+.card .card-footer .card-footer-img {
+  max-width: 10%;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+.card .card-footer a {
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.card .card-footer a:hover {
+  color: var(--cyan);
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    padding: 1.5rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
